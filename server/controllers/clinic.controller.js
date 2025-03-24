@@ -1,0 +1,10 @@
+clinicID
+nameaddress
+mobileNo
+phoneNo
+providerID
+adminID
+createdAt
+updatedAt
+remarks
+status

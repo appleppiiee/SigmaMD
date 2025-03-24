@@ -1,0 +1,12 @@
+appointmentID
+patientID
+dateTime
+purpose
+healthCareProviderID
+healthCareAdminID
+healthInsuranceProviderID
+clinicID
+remarks
+createdAt
+updatedAt
+status
