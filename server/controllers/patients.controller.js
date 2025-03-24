@@ -1,0 +1,11 @@
+patientID
+firstname
+middlename
+lastname
+dateOfBirth
+mobileNo
+address
+remarks
+createdAt
+updatedAt
+status
