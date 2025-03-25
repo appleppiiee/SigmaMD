@@ -1,3 +1,4 @@
+
 import Appointment from "../models/appointment.model.js";
 import extend from "lodash/extend.js";
 import errorHandler from "./error.controller.js";
