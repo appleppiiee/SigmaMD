@@ -1,4 +1,4 @@
-import express from 'express'
+
     import sigmapanelCtrl from '../controllers/sigmapanel.controller.js' 
     const router = express.Router()
     router.route('/api/sigmapanels').post(sigmapanelCtrl.create)
