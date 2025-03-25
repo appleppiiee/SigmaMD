@@ -1,4 +1,4 @@
-
+import Sigmapanel from '../models/sigmapanel.model.js'
 import extend from 'lodash/extend.js'
 import errorHandler from './error.controller.js'
 const create = async (req, res) => { 

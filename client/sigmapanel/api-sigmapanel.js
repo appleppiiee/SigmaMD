@@ -1,4 +1,4 @@
-
+const create = async (user) => { 
     try {
     let response = await fetch('/api/sigmapanels/', { 
     method: 'POST',
