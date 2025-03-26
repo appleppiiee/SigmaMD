@@ -2,6 +2,11 @@ import mongoose from 'mongoose'
 //const mongoose = require('mongoose');
 const SigmapanelSchema = new mongoose.Schema({
 
+    encounterID: {
+        type: String,
+        trim: true,
+        required: 'EncounterID is required'
+    },  
     patientID: {
         type: String,
         trim: true,

@@ -1,1 +1,2 @@
-# PROJECT-WEBAPP
+<b>Team Sigma</b> is a dynamic collective of passionate professionals who excel at blending creativity with technical expertise to tackle complex challenges. <br/>
+United by a commitment to innovation and excellence, the team thrives on collaboration and continuous improvement, consistently pushing the boundaries of what's possible to deliver transformative results and inspire lasting change in their field.
