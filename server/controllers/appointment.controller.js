@@ -18,7 +18,7 @@ const create = async (req, res) => {
 const list = async (req, res) => {
   try {
     let appointments = await Appointment.find().select(
-      "appointmentID patientID date Time purpose paymentMethod healthCareProviderID healthCareAdminID healthInsuranceProviderID clinicID remarks appointmentStatus createdAt updatedAt status"
+      "patientID date Time purpose paymentMethod healthCareProviderID healthCareAdminID healthInsuranceProviderID clinicID remarks appointmentStatus createdAt updatedAt status"
     );
     res.json(appointments);
   } catch (err) {

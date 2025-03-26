@@ -1,14 +1,10 @@
 import mongoose from "mongoose";
 
 const AppointmentSchema = new mongoose.Schema({
-  appointmentID: {
-    type: String,
-    trim: true,
-    unique: "Appointment already exists",
-  },
   patientID: {
     type: String,
     trim: true,
+    required: "patientID is required",
   },
   date: {
     type: Date,
@@ -41,6 +37,7 @@ const AppointmentSchema = new mongoose.Schema({
   clinicID: {
     type: String,
     trim: true,
+    required: "clinicID is required",
   },
   remarks: {
     type: String,
