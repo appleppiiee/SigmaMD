@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const patientSchema = new mongoose.Schema({
-  patientID: { type: String, required: true, unique: true },
   firstname: { type: String, required: true },
   middlename: { type: String },
   lastname: { type: String, required: true },
