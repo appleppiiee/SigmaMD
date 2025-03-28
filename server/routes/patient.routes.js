@@ -6,7 +6,7 @@ const {
   getPatientById,
   updatePatient,
   deletePatient
-} = require('../controllers/patientController');
+} = require('../controllers/patients.controller');
 
 // Create a new patient
 router.post('/patients', createPatient);
