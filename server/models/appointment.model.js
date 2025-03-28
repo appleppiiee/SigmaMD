@@ -58,6 +58,7 @@ const AppointmentSchema = new mongoose.Schema({
   status: {
     type: String,
     trim: true,
+    default: "a", //'a' for active, 'i' for inactive
   },
 });
 
