@@ -2,21 +2,16 @@ import mongoose from 'mongoose'
 //const mongoose = require('mongoose');
 const SigmapanelSchema = new mongoose.Schema({
 
-    encounterID: {
-        type: String,
-        trim: true,
-        required: 'EncounterID is required'
-    },  
     patientID: {
         type: String,
         trim: true,
         required: 'PatientID is required'
-    }, 
-    userID: {
+    },   
+    appointmentID: {
         type: String,
         trim: true,
-        required: 'ProviderID is required'
-    },
+        required: 'AppointmentID is required'
+    },   
     visitDateTime: {
         type: Date,
         default: Date.now   
@@ -91,11 +86,16 @@ const SigmapanelSchema = new mongoose.Schema({
     plProcedures: {
         type: String,
         trim: true
-    },
+    },  
     notes: {
         type: String,
         trim: true,
         required: 'Additional Notes is required'
+    },
+    providerID: {
+        type: String,
+        trim: true,
+        required: 'ProviderID is required'
     },
     createdAt: {
         type: Date,
@@ -104,6 +104,11 @@ const SigmapanelSchema = new mongoose.Schema({
     updatedAt: {
         type: Date,
         default: Date.now   
-    }                                  
+    },
+    status: {
+        type: String,
+        trim: true,
+        default: 'a'  // 'a' for active
+      }                           
  });
 export default mongoose.model('Sigmapanel', SigmapanelSchema);
