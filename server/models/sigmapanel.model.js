@@ -108,7 +108,7 @@ const SigmapanelSchema = new mongoose.Schema({
     status: {
         type: String,
         trim: true,
-        default: 'a'  // 'a' for active
-      }                           
+        default: "a", //'a' for active, 'i' for inactive
+      },                          
  });
 export default mongoose.model('Sigmapanel', SigmapanelSchema);

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const patientSchema = new mongoose.Schema({
-  patientID: { type: String, required: true, unique: true },
   firstname: { type: String, required: true },
   middlename: { type: String },
   lastname: { type: String, required: true },
@@ -14,7 +13,7 @@ const patientSchema = new mongoose.Schema({
   remarks: { type: String },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
-  status: { type: String, enum: ['Active', 'Inactive'], default: 'Active' }
+  status: { type: String, default: 'a' }
 });
 
 // Create the Patient model

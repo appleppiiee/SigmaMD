@@ -1,11 +1,7 @@
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
-  userID: {
-    type: String,
-    required: true,
-    unique: true
-  },
+ 
   firstName: {
     type: String,
     required: "First name is required",
@@ -60,18 +56,7 @@ const UserSchema = new mongoose.Schema({
   },
   remarks: {
     type: String
-  },
-  status: {
-    type: String,
-    enum: [
-      "Doctor is in",
-      "Doctor is out",
-      "Doctor on call",
-      "Doctor on vacation",
-      "Active",
-      "Inactive"
-    ]
-  },
+  },  
   createdAt: {
     type: Date,
     default: Date.now,
@@ -79,6 +64,11 @@ const UserSchema = new mongoose.Schema({
   },
   updatedAt: {
     type: Date
+  },
+  status: {
+    type: String,
+    trim: true,
+    default: "a", //'a' for active, 'i' for inactive
   }
 }, { versionKey: false });
 
