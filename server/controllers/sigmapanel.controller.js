@@ -16,7 +16,7 @@ error: errorHandler.getErrorMessage(err)
 }
 const list = async (req, res) => { 
 try {
-let sigmapanels = await Sigmapanel.find().select('encounterID patientID visitDateTime vHeight vWeight vBmi vTemp vBloodPressure vPulseRate mhMedicalHistory mhFamilyHistory mhSocialHistory mhAllergies mhCurrentMedications diagnosis plMedication plReferrals plFollowup plProcedures notes') 
+let sigmapanels = await Sigmapanel.find().select('patientID appointmentID visitDateTime vHeight vWeight vBmi vTemp vBloodPressure vPulseRate mhMedicalHistory mhFamilyHistory mhSocialHistory mhAllergies mhCurrentMedications diagnosis plMedication plReferrals plFollowup plProcedures notes providerID createdAt updatedAt status') 
 res.json(sigmapanels)
 } catch (err) {
 return res.status(400).json({

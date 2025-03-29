@@ -13,7 +13,7 @@ const patientSchema = new mongoose.Schema({
   remarks: { type: String },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
-  status: { type: String, enum: ['Active', 'Inactive'], default: 'Active' }
+  status: { type: String, default: 'a' }
 });
 
 // Create the Patient model

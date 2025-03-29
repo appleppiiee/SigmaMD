@@ -19,7 +19,7 @@ const create = async (req, res) => {
 const list = async (req, res) => {
   try {
     const checkouts = await Checkout.find()
-      .select('checkoutID checkInDate checkInTime particulars quantity amount paymentMethod amountPaid patientID healthCareProviderID healthCareAdminID healthInsuranceProviderID clinicID remarks checkoutStatus createdAt updatedAt status');
+      .select('appointmentID sigmapanelID checkInDate checkInTime particulars quantity amount paymentMethod amountPaid patientID providerID adminID hmoName hmoPOC hmoContactNo clinicID remarks checkoutStatus createdAt updatedAt status');
     return res.json(checkouts);
   } catch (err) {
     return res.status(400).json({
@@ -62,43 +62,11 @@ const update = async (req, res) => {
   }
 };
 
-const remove = async (req, res) => {
-  try {
-    let checkout = req.profile;
-    let deletedCheckout = await checkout.deleteOne();
-    res.json(deletedCheckout);
-  } catch (err) {
-    return res.status(400).json({
-      error: errorHandler.getErrorMessage(err),
-    });
-  }
-};
-
-const removeMany = async (req, res) => {
-  const { ids } = req.body;  
-  if (!Array.isArray(ids) || ids.length === 0) {
-    return res.status(400).json({
-      error: "Please provide an array of IDs to delete.",
-    });
-  }
-  try {
-    const result = await Checkout.deleteMany({ _id: { $in: ids } });
-    return res.status(200).json({
-      message: `${result.deletedCount} checkouts successfully deleted!`,
-    });
-  } catch (err) {
-    return res.status(400).json({
-      error: errorHandler.getErrorMessage(err),
-    });
-  }
-};
 
 export default {
   create,
   checkoutByID,
   read,
   list,
-  remove,
-  removeMany,
   update,
 };

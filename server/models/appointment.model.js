@@ -4,7 +4,7 @@ const AppointmentSchema = new mongoose.Schema({
   patientID: {
     type: String,
     trim: true,
-    required: "patientID is required",
+    required: "Patient ID is required",
   },
   date: {
     type: Date,
@@ -22,22 +22,20 @@ const AppointmentSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-  healthCareProviderID: {
+  providerID: {
     type: String,
     trim: true,
+    required: "Provider ID is required",
   },
-  healthCareAdminID: {
+  adminID: {
     type: String,
     trim: true,
-  },
-  healthInsuranceProviderID: {
-    type: String,
-    trim: true,
-  },
+    required: "Admin ID is required",
+  },  
   clinicID: {
     type: String,
     trim: true,
-    required: "clinicID is required",
+    required: "Clinic ID is required",
   },
   remarks: {
     type: String,

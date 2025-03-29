@@ -20,7 +20,5 @@ router.get('/patients/:id', getPatientById);
 // Update a patient by ID
 router.put('/patients/:id', updatePatient);
 
-// Delete a patient by ID
-router.delete('/patients/:id', deletePatient);
 
 module.exports = router;

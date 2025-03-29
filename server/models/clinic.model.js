@@ -36,14 +36,14 @@ const clinicSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['active', 'inactive'],
-    default: 'active',
-  }
+    trim: true,
+    default: "a", //'a' for active, 'i' for inactive
+  },
 });
 
-clinicSchema.virtual('fullName')
-  .get(function() {
-    return `${this.nameaddress}`; 
-  });
+// clinicSchema.virtual('fullName')
+//   .get(function() {
+//     return `${this.nameaddress}`; 
+//   });
 
 export default mongoose.model('Clinic', clinicSchema);

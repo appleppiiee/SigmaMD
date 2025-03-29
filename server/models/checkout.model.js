@@ -1,9 +1,14 @@
 import mongoose from 'mongoose';
 
 const checkoutSchema = new mongoose.Schema({
-  checkoutID: {
+  
+  appointmentID: {
     type: String,
-    required: [true, 'Checkout ID is required'],
+    required: [true, 'Appointment ID is required'],
+  },
+  sigmapanelID: {
+    type: String,
+    required: [true, 'Sigmapanel ID is required'],
   },
   checkInDate: {
     type: Date,
@@ -27,7 +32,7 @@ const checkoutSchema = new mongoose.Schema({
   },
   paymentMethod: {
     type: String,
-    enum: ['Cash', 'Credit Card', 'Debit Card'],
+    enum: ['Cash', 'HMO'],
     required: [true, 'Payment method is required'],
   },
   amountPaid: {
@@ -35,27 +40,33 @@ const checkoutSchema = new mongoose.Schema({
     required: [true, 'Amount paid is required'],
   },
   patientID: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Patient',
+    type: String,
+    // ref: 'Patient',
     required: [true, 'Patient ID is required'],
   },
-  healthCareProviderID: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'HealthCareProvider',
+  providerID: {
+    type: String,
+    // ref: 'Users',
     required: [true, 'Health care provider ID is required'],
   },
-  healthCareAdminID: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'HealthCareAdmin',
+  adminID: {
+    // type: mongoose.Schema.Types.ObjectId,
+    type: String,
+    // ref: 'Users',
     required: [true, 'Health care admin ID is required'],
   },
-  healthInsuranceProviderID: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'HealthInsuranceProvider',
+  hmoName: {
+    type: String,
+  },
+  hmoPoc: {
+    type: String,  
+  },
+  hmoContactNo: {
+    type: String,
   },
   clinicID: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Clinic',
+    type: String,
+    // ref: 'Clinic',
     required: [true, 'Clinic ID is required'],
   },
   remarks: {
@@ -76,14 +87,9 @@ const checkoutSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['Active', 'Inactive'],
-    default: 'Active',
+    trim: true,
+    default: "a", //'a' for active, 'i' for inactive
   },
 });
-
-checkoutSchema.virtual('fullName')
-  .get(function() {
-    return `${this.checkoutID} - ${this.patientID}`; 
-  });
 
 export default mongoose.model('Checkout', checkoutSchema);

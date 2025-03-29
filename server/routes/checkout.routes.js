@@ -7,13 +7,10 @@ router.route('/api/checkouts').post(checkoutCtrl.create);
 
 router.route('/api/checkouts').get(checkoutCtrl.list); 
 
-router.route('/api/checkouts').delete(checkoutCtrl.removeMany); 
-
 router.param('checkoutId', checkoutCtrl.checkoutByID);
 
 router.route('/api/checkouts/:checkoutId')
   .get(checkoutCtrl.read)      
-  .put(checkoutCtrl.update)    
-  .delete(checkoutCtrl.remove);
+  .put(checkoutCtrl.update) ;
 
 export default router;

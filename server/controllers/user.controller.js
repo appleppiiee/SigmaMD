@@ -59,7 +59,6 @@ const read = (req, res) => {
   if (user.userType === "provider") {
     // Doctor view
     return res.json({
-      userID: user.userID,
       firstName: user.firstName,
       lastName: user.lastName,
       mobileNo: user.mobileNo,
@@ -76,7 +75,6 @@ const read = (req, res) => {
 
   // Admin or secretary view
   return res.json({
-    userID: user.userID,
     firstName: user.firstName,
     lastName: user.lastName,
     mobileNo: user.mobileNo,
