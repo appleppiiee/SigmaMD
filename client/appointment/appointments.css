@@ -1,0 +1,146 @@
+label {
+  font-size: xx-large;
+}
+
+input {
+  font-size: larger;
+  height: 40px;
+}
+
+.appointments-container {
+  font-size: 20px;
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  gap: 10px;
+}
+
+.appointment-form {
+  width: 55%;
+}
+
+#appointment-form-body {
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.appoint-form-submit {
+  background-color: #4caf50; /* Green */
+  color: white;
+  padding: 12px 24px;
+  margin: 0;
+  font-size: 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.appoint-form-submit:hover {
+  background-color: #45a049; /* Darker green */
+  transform: translateY(-2px); /* Lift up slightly */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+.date-time-container {
+  display: flex;
+  gap: 20px; /* Adjust spacing between Date and Time */
+  align-items: center;
+}
+
+.date-container,
+.time-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-dropdown {
+  height: 40px; /* Adjust height as needed */
+  font-size: 16px; /* Increase text size */
+  padding: 5px; /* Add spacing inside the dropdown */
+  width: 100%; /* Make it responsive */
+  border: 1px solid #ccc; /* Add a border for visibility */
+  border-radius: 5px; /* Slightly rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.appointment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  font-size: 24px;
+}
+
+.patient-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #333;
+}
+
+.appointment-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.time-box,
+.date-box {
+  background-color: #00c4cc;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-align: center;
+  min-width: 120px; /* Set a minimum width to ensure content fits */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.time-box span,
+.date-box span {
+  font-size: 10px;
+  display: block;
+}
+
+.status-dropdown {
+  border: 1px solid #ccc;
+  padding: 4px;
+  border-radius: 4px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.filter-container {
+  margin-bottom: 10px;
+}
+
+.filter-container input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
