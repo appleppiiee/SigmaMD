@@ -1,24 +1,26 @@
-const express = require('express');
+import express from 'express';
+import patientCtrl from '../controllers/patients.controller.js'; // Updated import
 const router = express.Router();
-const {
-  createPatient,
-  getAllPatients,
-  getPatientById,
-  updatePatient,
-  deletePatient
-} = require('../controllers/patients.controller');
 
 // Create a new patient
-router.post('/patients', createPatient);
+router.route('/api/patients').post(patientCtrl.createPatient);
 
 // Get all patients
-router.get('/patients', getAllPatients);
+router.route('/api/patients').get(patientCtrl.getAllPatients);
 
-// Get a patient by ID
-router.get('/patients/:id', getPatientById);
+// Delete multiple patients
+router.route('/api/patients').delete(patientCtrl.removeManyPatients); // Updated to match controller method
+
+// Middleware to handle the patientId parameter
+router.param('patientId', patientCtrl.getPatientById); // Updated to match controller method
+
+// Get a specific patient by ID
+router.route('/api/patients/:patientId').get(patientCtrl.readPatient); // Updated to match controller method
 
 // Update a patient by ID
-router.put('/patients/:id', updatePatient);
+router.route('/api/patients/:patientId').put(patientCtrl.updatePatient);
 
+// Delete a patient by ID
+router.route('/api/patients/:patientId').delete(patientCtrl.deletePatient);
 
-module.exports = router;
+export default router;
