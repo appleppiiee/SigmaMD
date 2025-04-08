@@ -4,7 +4,7 @@ const config = {
     jwtSecret: process.env.JWT_SECRET || "YOUR_secret_key",
     mongoUri:
       process.env.MONGODB_URI ||
-      "mongodb+srv://sigmaMD:sigmaSigma@sigmamd.hyfld.mongodb.net/SigmaMD?retryWrites=true&w=majority&appName=SigmaMD" ||
+     
       process.env.MONGO_HOST,
   };
   export default config;
