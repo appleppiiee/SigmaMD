@@ -4,7 +4,7 @@ import {
   create,
   update,
   listAppointmentsWithPatients,
-} from "./api-appointment.js";
+} from "../appointment/api-appointment.js";
 import "./appointments.css";
 
 export default function Appointments() {
