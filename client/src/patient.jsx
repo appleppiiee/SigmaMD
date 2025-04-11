@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './patient.css';
-import { create, list } from '../patients/api-patient'; 
 
 const PatientPage = () => {
   const [formData, setFormData] = useState({
@@ -19,54 +18,40 @@ const PatientPage = () => {
   const [patients, setPatients] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Load patient list from backend on mount
-  useEffect(() => {
-    loadPatients();
-  }, []);
-
-  const loadPatients = async () => {
-    const data = await list();
-    if (data && !data.error) {
-      setPatients(data); // Setting the patients data
-    } else {
-      console.error("Failed to fetch patients:", data?.error);
-    }
-  };
-
+  // Handle input change for form fields
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  //  Submit patient data to backend
-  const handleSubmit = async (e) => {
+  // Simulate adding patient and updating the list
+  const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Form submitted:", formData); // Check if form data is correct
 
-    const res = await create(formData); // Send data to backend
-
-    if (res && !res.error) {
-      await loadPatients(); // Refresh patient list after successful creation
-      setFormData({
-        firstName: '',
-        middleName: '',
-        lastName: '',
-        mobileNo: '',
-        email: '',
-        dob: '',
-        remarks: '',
-        maritalStatus: '',
-        bloodType: '',
-        address: ''
-      });
-    } else {
-      console.error("Error creating patient:", res?.error);
-    }
+    // Add the new patient to the local state
+    setPatients(prevPatients => [...prevPatients, formData]);
+    
+    // Reset form data after submission
+    setFormData({
+      firstName: '',
+      middleName: '',
+      lastName: '',
+      mobileNo: '',
+      email: '',
+      dob: '',
+      remarks: '',
+      maritalStatus: '',
+      bloodType: '',
+      address: ''
+    });
   };
 
-  const filteredPatients = patients.filter(p =>
-    `${p.firstName} ${p.middleName} ${p.lastName}`.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    p.mobileNo.includes(searchTerm) ||
-    (p.remarks && p.remarks.toLowerCase().includes(searchTerm.toLowerCase()))
+  // Filter patients based on search term
+  const filteredPatients = patients.filter(patient =>
+    patient.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    patient.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    patient.mobileNo.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
