@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+/* Patient Container */
+.patient-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Layout */
+.main-content {
+    display: flex;
+    gap: 30px;
+}
+
+/* Form and List Section */
+.form-section,
+.list-section {
+    flex: 1;
+    padding: 30px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+/* Form Elements */
+.form-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 1.2em;
+    text-align: left; /* Ensure all labels are left-aligned by default */
+}
+
+.form-control {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    text-align: left; /* Ensure all inputs are left-aligned by default */
+}
+
+/* NEW: Specific styles for name fields */
+.name-fields-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.name-field-group {
+    width: 100%;
+}
+
+.name-field-group .form-label {
+    text-align: left;
+    margin-left: 0;
+}
+
+.name-field-group .form-control {
+    text-align: left;
+    padding-left: 12px;
+    margin-bottom: 0;
+}
+
+/* Rest of your existing CSS remains exactly the same */
+.form-row {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.add-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.filter-section label {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.filter-section input {
+    padding: 12px;
+    font-size: 1em;
+}
+
+table {
+    width: 100
+}
