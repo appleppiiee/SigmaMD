@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingNavbar from "./components/LandingNavbar";
-import Landing from "./pages/landing";
-import Signin from "./pages/signin";
-import Signup from "./pages/signup";
-import Footer from "./components/footer";
+import Landing from "./pages/Landing";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
+import Footer from "./components/Footer";
 
 const App = () => (
   <BrowserRouter>
