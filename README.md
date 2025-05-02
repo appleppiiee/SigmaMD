@@ -21,7 +21,7 @@
 
 ## 📁 Project Structure
  React frontend (I forgot to add client XD ) <br/>
- /server # Express backend API
+ /server  Express backend API
 
 ## 📚 Docs
 🧠 UX/UI Figma Prototype <br/>
