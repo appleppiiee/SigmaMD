@@ -20,15 +20,15 @@
 - **Project Tracking:** Jira & Confluence
 
 ## 📁 Project Structure
- React frontend (forgot to add client XD )
-/server # Express backend API
+ React frontend (I forgot to add client XD ) <br/>
+ /server # Express backend API
 
 ## 📚 Docs
-🧠 UX/UI Figma Prototype
+🧠 UX/UI Figma Prototype <br/>
 📊 Jira Board & Confluence
 
 ## 🧑‍💻 Authors
-Built by Team Sigma:
+Built by Team Sigma: <br/>
 Apple Jan Tacardon, Gabriel Vincent Abarra, Chester Bugarin, Xiaomin Guo, Akanksha Gurram, Ayushi Parmar
 
 ## 📄 License
