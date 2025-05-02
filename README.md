@@ -31,5 +31,5 @@
 Built by Team Sigma:
 Apple Jan Tacardon, Gabriel Vincent Abarra, Chester Bugarin, Xiaomin Guo, Akanksha Gurram, Ayushi Parmar
 
-##📄 License
+## 📄 License
 This project is for educational and competition purposes. All data used in the system is fictional.
